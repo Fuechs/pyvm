@@ -1,0 +1,19 @@
+value = integer
+reg = regsiter
+$N = reg N
+
+CPU : registers A, B, C
+Memory: stack, rom[1024], ram[1024]
+
+NAME ARGUMENTS              | DESCRIPTION
+----------------------------|------------
+NOOP                        | no operation
+HALT                        | halt the CPU
+ADDR <reg> <value>          | add value to reg
+PUSH <value>                | push value onto stack
+POPR <reg>                  | top of stack into reg
+OUTS                        | output top of stack
+OUTI <value>                | output value
+OUTR <reg>                  | output reg
+COYP <reg1> <reg2>          | copy reg1 into reg2
+----------------------------|------------

@@ -1,0 +1,5 @@
+ADDR $A #10
+COPY $A $B
+OUTR $A
+OUTR $B
+HALT
