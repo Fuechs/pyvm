@@ -9,6 +9,7 @@ NAME ARGUMENTS              | DESCRIPTION
 ----------------------------|------------
 NOOP                        | no operation
 HALT                        | halt the CPU
+ADDS                        | add top values of stack together
 ADDR <reg> <value>          | add value to reg
 PUSH <value>                | push value onto stack
 POPR <reg>                  | top of stack into reg

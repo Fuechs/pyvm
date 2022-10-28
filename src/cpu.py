@@ -53,6 +53,7 @@ class CPU:
         if   id == NOOP:    pass
         elif id == HALT:    self.running = False
         
+        elif id == ADDS:    self.mem.stack.append(self.mem.stack.pop()+self.mem.stack.pop())
         elif id == ADDR:    self.setRegister(self.fetchRegister(), self.fetchValue())
         
         elif id == PUSH:    self.mem.stack.append(self.fetchValue())

@@ -7,6 +7,7 @@ def tok() -> int:
 
 NOOP = tok()
 HALT = tok()
+ADDS = tok()
 ADDR = tok()
 PUSH = tok()
 POPR = tok()
@@ -16,15 +17,16 @@ OUTR = tok()
 COPY = tok()
 
 def inst_to_str(inst: int) -> str:
-    if   inst == NOOP:   return "NOOP"
-    elif inst == HALT:   return "HALT"
-    elif inst == ADDR:   return "ADDR"
-    elif inst == PUSH:   return "PUSH"
-    elif inst == POPR:   return "POPR"
-    elif inst == OUTS:   return "OUTS"
-    elif inst == OUTI:   return "OUTI"
-    elif inst == OUTR:   return "OUTR"
-    elif inst == COPY:   return "COPY"
+    if   inst == NOOP:  return "NOOP"
+    elif inst == HALT:  return "HALT"
+    elif inst == ADDS:  return "ADDS"
+    elif inst == ADDR:  return "ADDR"
+    elif inst == PUSH:  return "PUSH"
+    elif inst == POPR:  return "POPR"
+    elif inst == OUTS:  return "OUTS"
+    elif inst == OUTI:  return "OUTI"
+    elif inst == OUTR:  return "OUTR"
+    elif inst == COPY:  return "COPY"
 
 
 REG_A = "$A"
@@ -42,6 +44,7 @@ class Instruction:
 def str_to_inst(inst: str) -> Instruction:
     if   inst == "NOOP": return Instruction(NOOP)
     elif inst == "HALT": return Instruction(HALT)
+    elif inst == "ADDS": return Instruction(ADDS)
     elif inst == "ADDR": return Instruction(ADDR)
     elif inst == "PUSH": return Instruction(PUSH)
     elif inst == "POPR": return Instruction(POPR)
