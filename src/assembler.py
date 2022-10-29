@@ -1,4 +1,5 @@
 from inst import *
+# from memory import memoize
 
 class Assembler:
     def __init__(self, source: str) -> None:
@@ -8,6 +9,7 @@ class Assembler:
     def check(self) -> bool:
         return self.idx < len(self.source)
     
+    # @memoize
     def get_token(self):
         
         if self.check() and self.source[self.idx].isalpha():

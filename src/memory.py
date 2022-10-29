@@ -1,4 +1,20 @@
 from inst import Instruction
+# from functools import wraps
+
+# optimize recursive call idk
+# def memoize(func):
+#     cache = {}
+    
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         key = str(args) + str(kwargs)
+        
+#         if key not in cache:
+#             cache[key] = func(*args, **kwargs)
+            
+#         return cache[key]
+    
+#     return wrapper
 
 class Memory:
     def __init__(self, size: int = 1024) -> None:
