@@ -54,7 +54,19 @@ class CPU:
         elif id == HALT:    self.running = False
         
         elif id == ADDS:    self.mem.stack.append(self.mem.stack.pop()+self.mem.stack.pop())
-        elif id == ADDR:    self.setRegister(self.fetchRegister(), self.fetchValue())
+        elif id == SUBS:    
+            a = self.mem.stack.pop()
+            b = self.mem.stack.pop()
+            self.mem.stack.append(b-a)
+        
+        elif id == ADDR: 
+            reg = self.fetchRegister()
+            val = self.fetchValue()
+            self.setRegister(reg, self.getRegister(reg)+val)
+        elif id == SUBR: 
+            reg = self.fetchRegister()
+            val = self.fetchValue()
+            self.setRegister(reg, self.getRegister(reg)-val)
         
         elif id == PUSH:    self.mem.stack.append(self.fetchValue())
         elif id == POPR:    self.setRegister(self.fetchRegister(), self.mem.stack.pop())

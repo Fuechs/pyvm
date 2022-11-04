@@ -9,12 +9,14 @@ NAME ARGUMENTS              | DESCRIPTION
 ----------------------------|------------
 NOOP                        | no operation
 HALT                        | halt the CPU
-ADDS                        | add top values of stack together
+ADDS                        | add top values of stack 
+SUBS                        | sub top values of stack
 ADDR <reg> <value>          | add value to reg
+SUBR <reg> <value>          | sub value of reg
 PUSH <value>                | push value onto stack
 POPR <reg>                  | top of stack into reg
 OUTS                        | output top of stack
 OUTI <value>                | output value
 OUTR <reg>                  | output reg
-COYP <reg1> <reg2>          | copy reg1 into reg2
+COPY <reg1> <reg2>          | copy reg1 into reg2
 ----------------------------|------------

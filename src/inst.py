@@ -8,7 +8,9 @@ def tok() -> int:
 NOOP = tok()
 HALT = tok()
 ADDS = tok()
+SUBS = tok()
 ADDR = tok()
+SUBR = tok()
 PUSH = tok()
 POPR = tok()
 OUTS = tok()
@@ -20,7 +22,9 @@ def inst_to_str(inst: int) -> str:
     if   inst == NOOP:  return "NOOP"
     elif inst == HALT:  return "HALT"
     elif inst == ADDS:  return "ADDS"
+    elif inst == SUBS:  return "SUBS"
     elif inst == ADDR:  return "ADDR"
+    elif inst == SUBR:  return "SUBR"
     elif inst == PUSH:  return "PUSH"
     elif inst == POPR:  return "POPR"
     elif inst == OUTS:  return "OUTS"
@@ -45,7 +49,9 @@ def str_to_inst(inst: str) -> Instruction:
     if   inst == "NOOP": return Instruction(NOOP)
     elif inst == "HALT": return Instruction(HALT)
     elif inst == "ADDS": return Instruction(ADDS)
+    elif inst == "SUBS": return Instruction(SUBS)
     elif inst == "ADDR": return Instruction(ADDR)
+    elif inst == "SUBR": return Instruction(SUBR)
     elif inst == "PUSH": return Instruction(PUSH)
     elif inst == "POPR": return Instruction(POPR)
     elif inst == "OUTS": return Instruction(OUTS)
