@@ -4,7 +4,6 @@ from inst import *
 from assembler import Assembler
 # from memory import *
 
-clear = lambda: call("clear") 
             
 def main() -> None:
     clear()

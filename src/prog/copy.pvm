@@ -1,5 +1,55 @@
-PUSH #1
-PUSH #2
-SUBS 
-OUTS
+ADDR $C #2
+
+DRAW $C #0 #0
+WAIT #1
+DRAW $C #6 #0
+WAIT #1
+DRAW $C #0 #6
+WAIT #1
+DRAW $C #6 #6
+WAIT #1
+
+DRAW $C #1 #0
+WAIT #1
+DRAW $C #2 #0
+WAIT #1
+DRAW $C #3 #0
+WAIT #1
+DRAW $C #4 #0
+WAIT #1
+DRAW $C #5 #0
+WAIT #1
+
+DRAW $C #0 #1
+WAIT #1
+DRAW $C #0 #2
+WAIT #1
+DRAW $C #0 #3
+WAIT #1
+DRAW $C #0 #4
+WAIT #1
+DRAW $C #0 #5
+WAIT #1
+
+DRAW $C #1 #6
+WAIT #1
+DRAW $C #2 #6
+WAIT #1
+DRAW $C #3 #6
+WAIT #1
+DRAW $C #4 #6
+WAIT #1
+DRAW $C #5 #6
+WAIT #1
+
+DRAW $C #6 #1
+WAIT #1
+DRAW $C #6 #2
+WAIT #1
+DRAW $C #6 #3
+WAIT #1
+DRAW $C #6 #4
+WAIT #1
+DRAW $C #6 #5
+
 HALT

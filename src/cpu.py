@@ -1,6 +1,11 @@
 from inst import *
 from memory import Memory
 from error import *
+import graphics
+from os import system
+from time import sleep
+
+clear = lambda: system("clear")
 
 class CPU:
     def __init__(self) -> None:
@@ -10,6 +15,7 @@ class CPU:
         self.B = 0
         self.C = 0
         self.running = True
+        self.screen = graphics.Screen("PYVM")
         
     def debug(self) -> None:
         self.mem.debug()
@@ -75,11 +81,21 @@ class CPU:
         elif id == OUTI:    print(self.fetchValue())
         elif id == OUTR:    print(self.getRegister(self.fetchRegister()))
         
-        elif id == COPY:    self.setRegister(value=self.getRegister(self.fetchRegister()), name=self.fetchRegister())
+        elif id == COPY:    
+            val = self.getRegister(self.fetchRegister())
+            reg = self.fetchRegister()
+            self.setRegister(reg, val)
+        
+        elif id == DRAW:
+            col = graphics.colors[self.getRegister(self.fetchRegister())]
+            pos = (self.fetchValue(), self.fetchValue()) # (x, y)
+            self.screen.color = col
+            self.screen.content[pos[1]][pos[0]] = 1
                         
+        elif id == WAIT: sleep(self.fetchValue())
     
     def run(self) -> None:
-        print("\n-- Output --")
         while self.running is True:
-            self.eval(self.fetchInst())  
-        print("-- Output --\n")
+            self.eval(self.fetchInst())
+            clear()
+            self.screen.draw()

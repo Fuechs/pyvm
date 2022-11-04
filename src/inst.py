@@ -17,6 +17,8 @@ OUTS = tok()
 OUTI = tok()
 OUTR = tok()
 COPY = tok()
+DRAW = tok()
+WAIT = tok()
 
 def inst_to_str(inst: int) -> str:
     if   inst == NOOP:  return "NOOP"
@@ -31,6 +33,8 @@ def inst_to_str(inst: int) -> str:
     elif inst == OUTI:  return "OUTI"
     elif inst == OUTR:  return "OUTR"
     elif inst == COPY:  return "COPY"
+    elif inst == DRAW:  return "DRAW"
+    elif inst == WAIT:  return "WAIT"
 
 
 REG_A = "$A"
@@ -58,6 +62,8 @@ def str_to_inst(inst: str) -> Instruction:
     elif inst == "OUTI": return Instruction(OUTI)
     elif inst == "OUTR": return Instruction(OUTR)
     elif inst == "COPY": return Instruction(COPY)
+    elif inst == "DRAW": return Instruction(DRAW)
+    elif inst == "WAIT": return Instruction(WAIT)
     
 class Value:
     def __init__(self, value: int = 0) -> None:
